@@ -2,19 +2,20 @@ import { Box } from "@mui/material";
 import React, { FC, Fragment } from "react"
 import { useAppSelector } from "../app/hooks";
 import { selectHeroCurrent, selectHeroDescription, selectHeroTitle } from "../features/hero/heroSlice";
+import About from "./About";
+import Contact from "./Contact";
+import Portfolio from "./Portfolio";
 
 const Hero: FC = () => {
     const current = useAppSelector(selectHeroCurrent);
     const title = useAppSelector(selectHeroTitle);
-    const description = useAppSelector(selectHeroDescription);
 
     return (
         <Box>
             <h1>{title}</h1>
-            <div dangerouslySetInnerHTML={{__html: description }} />
-                
-            
-            
+            {current == 'about' ? <About /> : null}
+            {current == 'portfolio' ? <Portfolio /> : null}
+            {current == 'contact' ? <Contact /> : null}
 
         </Box>
     )

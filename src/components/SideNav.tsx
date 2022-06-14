@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import { FC, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { selectSideNav } from "../features/sideNav/sideNavSlice";
-import { setDescription } from "../features/hero/heroSlice";
+import { setContact, setDescription } from "../features/hero/heroSlice";
 import {
     backgroundDesc,
     skillsDesc,
@@ -32,6 +32,12 @@ const SideNav: FC<SideNavProps> = (props) => {
                 break;
             case "work history":
                 dispatch(setDescription(workHistoryDesc))
+                break;
+            case "email":
+                dispatch(setContact("email"))
+                break;
+            case "socials":
+                dispatch(setContact("socials"))
                 break;
         }
         

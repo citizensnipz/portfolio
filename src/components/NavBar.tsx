@@ -20,7 +20,7 @@ import { selectTheme, setTheme } from "../features/theme/themeSlice";
 import { aboutMenu, portfolioMenu, contactMenu } from "../constants/menus";
 import { aboutTitle, portfolioTitle, contactTitle } from "../constants/titles";
 import { setMenu } from "../features/sideNav/sideNavSlice";
-import { setTitle } from "../features/hero/heroSlice";
+import { setCurrent, setDescription, setTitle } from "../features/hero/heroSlice";
 
 const NavBar: FC = () => {
   const dispatch = useAppDispatch();
@@ -39,11 +39,15 @@ const NavBar: FC = () => {
 
   const handleMenuClick = (menu: string[]) : undefined => { 
     dispatch(setMenu(menu));
+    dispatch(setDescription("Choose a selection from the menu..."));
     if (menu == aboutMenu) {
+        dispatch(setCurrent("about"))
         dispatch(setTitle(aboutTitle))
     } else if (menu == portfolioMenu) {
+        dispatch(setCurrent("portfolio"))
         dispatch(setTitle(portfolioTitle))
     } else {
+        dispatch(setCurrent("contact"))
         dispatch(setTitle(contactTitle))
     }
 
@@ -103,13 +107,13 @@ const NavBar: FC = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              <MenuItem onClick={handleCloseNavMenu}>
+              <MenuItem onClick={() => handleMenuClick(aboutMenu)}>
                 <Typography textAlign="center">About Me</Typography>
               </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu}>
+              <MenuItem onClick={() => handleMenuClick(portfolioMenu)}>
                 <Typography textAlign="center">Portfolio</Typography>
               </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu}>
+              <MenuItem onClick={() => handleMenuClick(contactMenu)}>
                 <Typography textAlign="center">Contact</Typography>
               </MenuItem>
             </Menu>
