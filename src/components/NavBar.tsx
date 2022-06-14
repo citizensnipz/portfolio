@@ -21,6 +21,7 @@ import { aboutMenu, portfolioMenu, contactMenu } from "../constants/menus";
 import { aboutTitle, portfolioTitle, contactTitle } from "../constants/titles";
 import { setMenu } from "../features/sideNav/sideNavSlice";
 import { setCurrent, setDescription, setTitle } from "../features/hero/heroSlice";
+import nameLogo from '../assets/img/nameLogo.png';
 
 const NavBar: FC = () => {
   const dispatch = useAppDispatch();
@@ -67,7 +68,8 @@ const NavBar: FC = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
+            {/* 
+            <Typography
                 variant="h6"
                 noWrap
                 component="a"
@@ -77,6 +79,11 @@ const NavBar: FC = () => {
             >
                 Josh Kroslowitz
             </Typography>
+            
+            */}
+          <Box sx={{ display: { xs: 'none', md: 'flex'}}}>
+           <img src={nameLogo} height='50'/> 
+            </Box>  
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
           <IconButton
@@ -117,19 +124,12 @@ const NavBar: FC = () => {
                 <Typography textAlign="center">Contact</Typography>
               </MenuItem>
             </Menu>
+            <Box sx={{ display: { xs: 'flex', md: 'none'}}}>
+                <img src={nameLogo} height='50'/> 
+            </Box>
           </Box>
-
-          <Typography
-                variant="h6"
-                noWrap
-                component="a"
-                sx={{
-                    display: { xs: 'flex', md: 'none' },
-                }}
-                flexGrow="1"
-            >
-                Josh Kroslowitz
-            </Typography>
+              
+          
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
