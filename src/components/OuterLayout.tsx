@@ -1,5 +1,6 @@
 import { Box, Grid, useMediaQuery, useTheme, } from "@mui/material";
 import { Children, FC, useEffect } from "react";
+import Hero from "./Hero";
 import NavBar from "./NavBar";
 import SideNav from "./SideNav";
 
@@ -17,7 +18,7 @@ const OuterLayout: FC = () => {
                         <SideNav isMobile={matches}/> 
                     </Grid>
                     <Grid item xs={12} md={10} >
-                        <p>Here's some more stuff</p>
+                        <Hero />
                     </Grid>
                 </Grid>
             </Box>

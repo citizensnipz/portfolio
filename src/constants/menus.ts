@@ -5,7 +5,8 @@ export const aboutMenu = [
 ]
 
 export const portfolioMenu = [
-    "OneFi Exchange"
+    "OneFi Exchange",
+    "ARCANE DIVIDE"
 ]
 
 export const contactMenu =[

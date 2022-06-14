@@ -18,7 +18,9 @@ import { FC } from "react";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { selectTheme, setTheme } from "../features/theme/themeSlice";
 import { aboutMenu, portfolioMenu, contactMenu } from "../constants/menus";
+import { aboutTitle, portfolioTitle, contactTitle } from "../constants/titles";
 import { setMenu } from "../features/sideNav/sideNavSlice";
+import { setTitle } from "../features/hero/heroSlice";
 
 const NavBar: FC = () => {
   const dispatch = useAppDispatch();
@@ -37,6 +39,13 @@ const NavBar: FC = () => {
 
   const handleMenuClick = (menu: string[]) : undefined => { 
     dispatch(setMenu(menu));
+    if (menu == aboutMenu) {
+        dispatch(setTitle(aboutTitle))
+    } else if (menu == portfolioMenu) {
+        dispatch(setTitle(portfolioTitle))
+    } else {
+        dispatch(setTitle(contactTitle))
+    }
 
     setAnchorElNav(null);
     return undefined;
