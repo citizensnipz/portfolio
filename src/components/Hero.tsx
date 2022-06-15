@@ -9,20 +9,26 @@ import {
 import About from "./About";
 import Contact from "./Contact";
 import Portfolio from "./Portfolio";
+import ParticleBG from './ParticleBG';
+
 
 const Hero: FC = () => {
   const current = useAppSelector(selectHeroCurrent);
   const title = useAppSelector(selectHeroTitle);
+  
 
   return (
-    <Container>
-      <Box>
-        <h1>{title}</h1>
-        {current == "about" ? <About /> : null}
-        {current == "portfolio" ? <Portfolio /> : null}
-        {current == "contact" ? <Contact /> : null}
-      </Box>
-    </Container>
+    <>
+        <ParticleBG />
+      <Container>
+        <Box>
+          <h1>{title}</h1>
+          {current == "about" ? <About /> : null}
+          {current == "portfolio" ? <Portfolio /> : null}
+          {current == "contact" ? <Contact /> : null}
+        </Box>
+      </Container>
+    </>
   );
 };
 

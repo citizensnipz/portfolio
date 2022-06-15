@@ -5,6 +5,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import RedditIcon from '@mui/icons-material/Reddit';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { Box, Grid, Link } from '@mui/material';
+import TelegramIcon from '@mui/icons-material/Telegram';
 
 const Socials: FC = () => {
 
@@ -37,6 +38,13 @@ const Socials: FC = () => {
                         <RedditIcon />
                     </Link>
                 </Grid>
+                <Grid item>
+                    <Link href='https://msng.link/o/?@CitizenSnipz=tg' color='inherit'>
+                        <TelegramIcon />
+                    </Link>
+                </Grid>
+
+                
             </Grid>
         </Box>
     )

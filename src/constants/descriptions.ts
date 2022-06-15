@@ -13,9 +13,9 @@ export const backgroundDesc =
 "trading and DeFi.";
 
 export const skillsDesc = 
-"<strong>Web Skills:</strong> TypeScript/JavaScript, MERN stack - React.js, Redux, Node.js, MongoDB, Express.js <br><br>"+
-"<strong>Blockchain Skills:</strong> Solidity, Ethers.js/Web3.js, HardHat, Truffle/Ganache, Remix IDE<br><br> "+
-"<strong>Specialization:</strong> Codebase, Redux + functionality, backend (Express/Node), APIs, Smart Contracts";
+"<h4>Web Skills:</h4> TypeScript/JavaScript, MERN stack - React.js, Redux, Node.js, MongoDB, Express.js <br><br>"+
+"<h4>Blockchain Skills:</h4> Solidity, Ethers.js/Web3.js, HardHat, Truffle/Ganache, Remix IDE<br><br> "+
+"<h4>Specialization:</h4> Codebase, Redux + functionality, backend (Express/Node), APIs, Smart Contracts";
 
 export const workHistoryDesc = 
 "<strong>OneFi Exchange</strong> <br>"+

@@ -65,7 +65,7 @@ const NavBar: FC = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={{background: "#242321"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
             {/* 
